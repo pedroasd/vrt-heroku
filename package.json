@@ -15,5 +15,9 @@
     "express": "^4.16.4",
     "mz": "^2.7.0",
     "resemblejs": "^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pedroasd/vrt-heroku"
   }
 }

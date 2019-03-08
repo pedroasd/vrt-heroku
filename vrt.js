@@ -5,6 +5,7 @@ const fs = require("mz/fs");
 const cypress = require('cypress')
 
 var archivoHistorico = "./ejecuciones.json"
+const PORT = process.env.PORT || 5000
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs')
@@ -14,9 +15,7 @@ app.get('/', function (req, res) {
     res.render('index', historico)
 })
 
-app.listen(5000, function () {
-    console.log('Example app listening on port 3000!')
-})
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 app.get('/comparar', function (req, res) {
     var cypressScript = 'cypress/integration/simple_spec.js'
