@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Visual Regression Testing</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+        <fieldset>
+            <form action="/comparar" method="get">
+                <input type="submit" class="ghost-button" value="Generar reporte">
+            </form>
+        </fieldset>
+
+        <table id="ejecuciones">
+            <tr>
+                <th>Fecha</th>
+                <th>Imagen base</th>
+                <th>Imagen modificada</th>
+                <th>Diferencias</th>
+                <th>Información</th>
+            </tr>
+            <% ejecuciones.forEach(function(r) { %>
+            <tr>
+                <td><%= r.fecha %></td>
+                <td><img src="/imagenes/<%= r.carpeta %>/screen1.png" width="300"></td>
+                <td><img src="/imagenes/<%= r.carpeta %>/screen2.png" width="300"></td>
+                <td><img src="/imagenes/<%= r.carpeta %>/output.png" width="300"></td>
+                <td>
+                    <ul>
+                        <li>SameDimensions: <%= r.info.isSameDimensions %></li>
+                        <li>MatchPercentage: <%= r.info.misMatchPercentage %></li>                                                
+                    </ul>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+    </div>
+</body>
+
+</html>
