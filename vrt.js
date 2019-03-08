@@ -5,7 +5,7 @@ const fs = require("mz/fs");
 const cypress = require('cypress')
 
 var archivoHistorico = "./ejecuciones.json"
-const PORT = 80//process.env.PORT || 5000
+const PORT = 5000
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs')
