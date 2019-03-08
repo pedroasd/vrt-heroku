@@ -4,6 +4,7 @@
   "description": "Visual Regression Testing",
   "main": "vrt.js",
   "scripts": {
+    "start": "node vrt.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pedro Salazar",
